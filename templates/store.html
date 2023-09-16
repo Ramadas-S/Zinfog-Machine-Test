@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="section-name padding-y-sm">
+
+
+	
+	<div class="container">
+		<header class="border-bottom mb-4 pb-3">
+			<div class="form-inline">
+				<span class="mr-md-auto"><b>{{ product_count }}</b> items found </span>
+	
+			</div>
+		</header>
+	<div class="row">
+		{% for product in products %}
+	
+		<div class="col-md-3">
+			<div class="card card-product-grid">
+				<a href="{{product.get_url}}" class="img-wrap "> <img src="{{product.images.url}}"> </a>
+				<figcaption class="info-wrap">
+					<a href="{{product.get_url}}" class="title">{{product.product_name}}</a>
+					<div class="price mt-1">$ {{product.price}}</div>
+				</figcaption>
+			</div>
+		</div>
+		{% endfor %} 
+	</div> 
+	
+	
+	</div>
+	</section>
+{% endblock  %}
